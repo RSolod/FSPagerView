@@ -161,6 +161,14 @@ open class FSPagerView: UIView,UICollectionViewDataSource,UICollectionViewDelega
         }
     }
     
+    /// Should the pager view be limited to scrolling a single page at a time?
+    @IBInspectable
+    open var disableMultiPageScrolling: Bool = false {
+        didSet {
+            self.collectionViewLayout.disableMultiPageScrolling = self.disableMultiPageScrolling
+        }
+    }
+    
     /// The transformer of the pager view.
     @objc
     open var transformer: FSPagerViewTransformer? {
